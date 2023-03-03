@@ -2,7 +2,7 @@
 
 ![Screenshot 2023-03-03 215923](https://user-images.githubusercontent.com/94600381/222704352-691b1db6-d70a-4174-9ba6-7e2ad3d7ed5c.png)
 
-Instalation:
+Installation:
 1. Place Programming Board
 2. Copy code from [HERE](https://raw.githubusercontent.com/Vtreka/DU-Schematics-Monitor/main/LUA.json) and paste it into board by Right mouse click -> Advanced -> Paste Lua Configuration from Clipboard
 3. Connect PB to CONTAINER FIRST and then to screen(s). 
