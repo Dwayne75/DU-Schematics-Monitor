@@ -1,8 +1,8 @@
 ---
 --- Created by Zrips#9691.
 --- DateTime: 2022-10-14 11:33
----
----
+--- Updated by Vtreka#1337
+--- DateTime: 2023-02-26 00:48
 
 
 screens = {}
@@ -41,6 +41,9 @@ function addSchematic(id, max, priority)
     name = name:gsub("Tier " .. tempTier, "")
     name = name:gsub("Construct Support", "")
     name = name:gsub("Core Unit", "")
+    name = name:gsub("Deployables", "")
+    name = name:gsub("Fuel", "")
+    name = name:gsub("Scrap", "")
 
     schematics[#schematics + 1] = { id = id, name = name, max = max, tier = tempTier, priority = priority, left = left }
 end
@@ -51,15 +54,15 @@ function loadInSchematics()
     -- Tier 1 Product Material
     addSchematic(690638651, 6000, true)
     -- Tier 1 XS Element
-    addSchematic(1910482623, 50)
+    addSchematic(1910482623, 50, false)
     -- Tier 1 S Element
-    addSchematic(4148773283, 50)
+    addSchematic(4148773283, 50, false)
     -- Tier 1 M Element
-    addSchematic(2066101218, 50, true)
+    addSchematic(2066101218, 50, false)
     -- Tier 1 L Element
-    addSchematic(2068774589, 100, true)
+    addSchematic(2068774589, 100, false)
     -- Tier 1 XL Element
-    addSchematic(304578197, 50)
+    addSchematic(304578197, 50, false)
     -- Tier 1 Honeycomb
     addSchematic(2479827059, 500, false)
 
@@ -69,15 +72,15 @@ function loadInSchematics()
     -- Tier 2 Pure Material
     addSchematic(3332597852, 4000, true)
     -- Tier 2 XS Element
-    addSchematic(2096799848, 40)
+    addSchematic(2096799848, 40, false)
     -- Tier 2 S Element
-    addSchematic(1752968727, 40)
+    addSchematic(1752968727, 40, false)
     -- Tier 2 M Element
-    addSchematic(2726927301, 40, true)
+    addSchematic(2726927301, 40, false)
     -- Tier 2 L Element
-    addSchematic(616601802, 60, true)
+    addSchematic(616601802, 60, false)
     -- Tier 2 XL Element
-    addSchematic(3677281424, 40)
+    addSchematic(3677281424, 40, false)
     -- Tier 2 Honeycomb
     addSchematic(632722426, 500, false)
     -- Tier 2 Honeycomb
@@ -89,91 +92,109 @@ function loadInSchematics()
     -- Tier 3 Pure Material
     addSchematic(2003602752, 1000, true)
     -- Tier 3 XS Element
-    addSchematic(787727253, 30)
+    addSchematic(787727253, 30, false)
     -- Tier 3 S Element
-    addSchematic(425872842, 30)
+    addSchematic(425872842, 30, false)
     -- Tier 3 M Element
-    addSchematic(3713463144, 30, true)
+    addSchematic(3713463144, 30, false)
     -- Tier 3 L Element
-    addSchematic(1427639881, 30, true)
+    addSchematic(1427639881, 30, false)
     -- Tier 3 XL Element
-    addSchematic(109515712, 30)
+    addSchematic(109515712, 30, false)
     -- Tier 3 Honeycomb
     addSchematic(2343247971, 500, false)
     -- Tier 3 Honeycomb
     addSchematic(4221430495, 500, false)
 
-    tempTier = 6
-    -- Construct Support XS
-    addSchematic(1477134528, 100)
-    -- Construct Support S
-    addSchematic(1224468838, 100)
-    -- Construct Support M
-    addSchematic(1861676811, 200, true)
-    -- Construct Support L
-    addSchematic(784932973, 200, true)
-
-    left = false
-
     tempTier = 4
     -- Tier 4 Product Material
-    addSchematic(2485530515, 500)
+    addSchematic(2485530515, 500, true)
     -- Tier 4 Pure Material
-    addSchematic(2326433413, 500)
+    addSchematic(2326433413, 500, true)
     -- Tier 4 XS Element
-    addSchematic(210052275, 30)
+    addSchematic(210052275, 30, false)
     -- Tier 4 S Element
-    addSchematic(3890840920, 30)
+    addSchematic(3890840920, 30, false)
     -- Tier 4 M Element
-    addSchematic(3881438643, 30)
+    addSchematic(3881438643, 30, false)
     -- Tier 4 L Element
-    addSchematic(1614573474, 30)
+    addSchematic(1614573474, 30, false)
     -- Tier 4 XL Element
-    addSchematic(1974208697, 30)
+    addSchematic(1974208697, 30, false)
     -- Tier 4 Honeycomb
     addSchematic(3743434922, 500, false)
     -- Tier 4 Honeycomb
     addSchematic(99491659, 500, false)
 
+    left = false
+    
     tempTier = 5
     -- Tier 5 Product Material
-    addSchematic(2752973532, 500)
+    addSchematic(2752973532, 500, false)
     -- Tier 5 Pure Material
-    addSchematic(1681671893, 500)
+    addSchematic(1681671893, 500, false)
     -- Tier 5 XS Element
-    addSchematic(1513927457, 30)
+    addSchematic(1513927457, 30, false)
     -- Tier 5 S Element
-    addSchematic(880043901, 30)
+    addSchematic(880043901, 30, false)
     -- Tier 5 M Element
-    addSchematic(3672319913, 30)
+    addSchematic(3672319913, 30, false)
     -- Tier 5 L Element
-    addSchematic(86717297, 30)
+    addSchematic(86717297, 30, false)
     -- Tier 5 XL Element
-    addSchematic(1320378000, 30)
+    addSchematic(1320378000, 30, false)
     -- Tier 5 Honeycomb
     addSchematic(1885016266, 500, false)
     -- Tier 5 Honeycomb
     addSchematic(3303272691, 500, false)
 
+    tempTier = 6
+    -- Construct Support XS
+    addSchematic(1477134528, 100, false)
+    -- Construct Support S
+    addSchematic(1224468838, 100, false)
+    -- Construct Support M
+    addSchematic(1861676811, 200, false)
+    -- Construct Support L
+    addSchematic(784932973, 200, false)
+    
     tempTier = 7
     -- Core Unit xs
-    addSchematic(120427296, 10)
+    addSchematic(120427296, 10, false)
     -- Core Unit s
-    addSchematic(1213081642, 10)
+    addSchematic(1213081642, 10, false)
     -- Core Unit M
-    addSchematic(1417495315, 20)
+    addSchematic(1417495315, 20, false)
     -- Core Unit L
-    addSchematic(1202149588, 20)
+    addSchematic(1202149588, 20, false)
 
     tempTier = 8
-    -- Warp cells
-    addSchematic(363077945, 5000, true)
+    -- Bonsai
+    addSchematic(674258992, 1, false)
+    -- Territory Unit
+    addSchematic(318308564, 7, false)
+    -- Warp Beacon
+    addSchematic(3437488324, 1, false)
+
+    tempTier = 9
     -- Atmo Fuel
-    addSchematic(3077761447, 5000)
-    -- Space Fuel
-    addSchematic(1917988879, 5000)
+    addSchematic(3077761447, 5000, true)
     -- Rocket Fuel
-    addSchematic(3992802706, 2000)
+    addSchematic(3992802706, 2000, false)
+    -- Space Fuel
+    addSchematic(1917988879, 5000, true)
+    -- Warp cells
+    addSchematic(363077945, 5000, false)
+    
+    tempTier = 10
+    -- Tier 2 Scrap
+    addSchematic(1952035274, 1000, false)
+    -- Tier 3 Scrap
+    addSchematic(2566982373, 1000, false)
+    -- Tier 4 Scrap
+    addSchematic(1045229911, 1000, true)
+    -- Tier 5 Scrap
+    addSchematic(2702634486, 1000, true)
 end
 
 loadInSchematics()
@@ -184,7 +205,8 @@ function formatScript(data)
     return [[---
 --- Created by Zrips#9691.
 --- DateTime: 2022-10-05 15:12
----
+--- Updated by Vtreka#1337
+--- DateTime: 2023-02-26 00:48
 
 font = loadFont('Play', 25)
 smallFont = loadFont('Play', 15)
@@ -201,6 +223,10 @@ if not init then
     cyanColor = { r = 135 / 255, g = 206 / 255, b = 235 / 255 }
     uiSettings = { r = 37 / 255, g = 57 / 255, b = 64 / 255 }
     barColor1 = { r = 255 / 255, g = 255 / 255, b = 255 / 255 }
+    tier2Color = { r = 0 / 255, g = 255 / 255, b = 0 / 255 }
+    tier3Color = { r = 0 / 255, g = 127 / 255, b = 255 / 255 }
+    tier4Color = { r = 255 / 255, g = 0 / 255, b = 255 / 255 }
+    tier5Color = { r = 255 / 255, g = 102 / 255, b = 0 / 255 }
     orangeColor = { r = 224 / 255, g = 165 / 255, b = 85 / 255 }
     backgroundColor = { r = 13 / 255, g = 24 / 255, b = 28 / 255 }
 
@@ -213,7 +239,7 @@ if not init then
 
     barStartY = 40
 
-    barHeight = 25
+    barHeight = 21
     barWidth = 130
     barSpacing = 4
 
@@ -287,6 +313,14 @@ function drawLine(material, y)
     -- Material name section
     if material.p and progress < 100 and material.max > 0 then
         setNextFillColor(layer, orangeColor.r, orangeColor.g, orangeColor.b, alpha)
+    elseif material.tier == 2 then
+        setNextFillColor(layer, tier2Color.r, tier2Color.g, tier2Color.b, 0.5)
+    elseif material.tier == 3 then
+        setNextFillColor(layer, tier3Color.r, tier3Color.g, tier3Color.b, alpha)    
+    elseif material.tier == 4 then
+        setNextFillColor(layer, tier4Color.r, tier4Color.g, tier4Color.b, 0.5)
+    elseif material.tier == 5 then
+        setNextFillColor(layer, tier5Color.r, tier5Color.g, tier5Color.b, alpha)
     else
         setNextFillColor(layer, barColor1.r, barColor1.g, barColor1.b, alpha)
     end
@@ -352,20 +386,52 @@ for id, schematic in ipairs(blocks) do
 
         local tierName = "Tier " .. schematic.tier
 
-        if schematic.tier > 5 then
-            if schematic.tier == 6 then
-                tierName = "Construct Support"
-            elseif schematic.tier == 7 then
-                tierName = "Core Unit"
-            elseif schematic.tier == 8 then
-                tierName = "Consumables"
-            end
+        if schematic.tier == 1 then
+            setNextTextAlign(layer, AlignH_Center, AlignV_Middle)
+            setNextFillColor(layer, barColor1.r, barColor1.g, barColor1.b, 1)
+            addText(layer, font, tierName, rx / 2, barStartY + (pos * (barHeight + barSpacing)) + offset - (barHeight / 2))
+        elseif schematic.tier == 2 then
+            setNextTextAlign(layer, AlignH_Center, AlignV_Middle)
+            setNextFillColor(layer, tier2Color.r, tier2Color.g, tier2Color.b, 0.5)
+            addText(layer, font, tierName, rx / 2, barStartY + (pos * (barHeight + barSpacing)) + offset - (barHeight / 2))
+        elseif schematic.tier == 3 then
+            setNextTextAlign(layer, AlignH_Center, AlignV_Middle)
+            setNextFillColor(layer, tier3Color.r, tier3Color.g, tier3Color.b, 1)
+            addText(layer, font, tierName, rx / 2, barStartY + (pos * (barHeight + barSpacing)) + offset - (barHeight / 2))
+        elseif schematic.tier == 4 then
+            setNextTextAlign(layer, AlignH_Center, AlignV_Middle)
+            setNextFillColor(layer, tier4Color.r, tier4Color.g, tier4Color.b, 0.5)
+            addText(layer, font, tierName, rx / 2, barStartY + (pos * (barHeight + barSpacing)) + offset - (barHeight / 2))
+        elseif schematic.tier == 5 then
+            setNextTextAlign(layer, AlignH_Center, AlignV_Middle)
+            setNextFillColor(layer, tier5Color.r, tier5Color.g, tier5Color.b, 1)
+            addText(layer, font, tierName, rx / 2, barStartY + (pos * (barHeight + barSpacing)) + offset - (barHeight / 2))
+        elseif schematic.tier == 6 then
+            tierName = "Construct Support"
+            setNextTextAlign(layer, AlignH_Center, AlignV_Middle)
+            setNextFillColor(layer, barColor1.r, barColor1.g, barColor1.b, 1)
+            addText(layer, font, tierName, rx / 2, barStartY + (pos * (barHeight + barSpacing)) + offset - (barHeight / 2))
+        elseif schematic.tier == 7 then
+            tierName = "Core Unit"
+            setNextTextAlign(layer, AlignH_Center, AlignV_Middle)
+            setNextFillColor(layer, barColor1.r, barColor1.g, barColor1.b, 1)
+            addText(layer, font, tierName, rx / 2, barStartY + (pos * (barHeight + barSpacing)) + offset - (barHeight / 2))
+        elseif schematic.tier == 8 then
+            tierName = "Deployables"
+            setNextTextAlign(layer, AlignH_Center, AlignV_Middle)
+            setNextFillColor(layer, barColor1.r, barColor1.g, barColor1.b, 1)
+            addText(layer, font, tierName, rx / 2, barStartY + (pos * (barHeight + barSpacing)) + offset - (barHeight / 2))
+        elseif schematic.tier == 9 then
+            tierName = "Fuel"
+            setNextTextAlign(layer, AlignH_Center, AlignV_Middle)
+            setNextFillColor(layer, barColor1.r, barColor1.g, barColor1.b, 1)
+            addText(layer, font, tierName, rx / 2, barStartY + (pos * (barHeight + barSpacing)) + offset - (barHeight / 2))
+        elseif schematic.tier == 10 then
+            tierName = "Scrap"
+            setNextTextAlign(layer, AlignH_Center, AlignV_Middle)
+            setNextFillColor(layer, barColor1.r, barColor1.g, barColor1.b, 1)
+            addText(layer, font, tierName, rx / 2, barStartY + (pos * (barHeight + barSpacing)) + offset - (barHeight / 2))
         end
-
-        setNextTextAlign(layer, AlignH_Center, AlignV_Middle)
-        setNextFillColor(layer, barColor1.r, barColor1.g, barColor1.b, 1)
-        addText(layer, font, tierName, rx / 2, barStartY + (pos * (barHeight + barSpacing)) + offset - (barHeight / 2))
-
     end
 
     drawLine(schematic, barStartY + (pos * (barHeight + barSpacing)) + offset)
