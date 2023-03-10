@@ -1,8 +1,10 @@
----
+--- Dual Universe Schematics Monitor v2.1
 --- Created by Zrips.
 --- DateTime: 2022-10-06 11:03
 --- Updated by Vtreka#1337
---- DateTime: 2023-02-26 00:48
+--- LastUpdate: 2023-03-11 06:37
+
+system.print(" --- Schematics Bank v2.1 ---")
 
 mceil = math.ceil
 smatch = string.match
