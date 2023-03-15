@@ -34,9 +34,9 @@ function getDirection(element)
     else
         if mabs(element.getUp()[2]) > mabs(element.getUp()[3]) then
             if element.getUp()[2] > 0 then
-                position = "vl"
-            else
                 position = "vr"
+            else
+                position = "vl"
             end
         else
             if element.getUp()[3] > 0 then
